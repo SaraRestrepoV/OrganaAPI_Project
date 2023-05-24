@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Views\Shared\PartialViews\" />
   </ItemGroup>
 
 </Project>

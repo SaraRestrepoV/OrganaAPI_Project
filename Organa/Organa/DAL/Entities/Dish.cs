@@ -26,8 +26,7 @@ namespace Organa.DAL.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public double Value { get; set; }
 
-        [Display(Name = "Ingredientes")]
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        [Display(Name = "Ingredientes")]      
         public ICollection<Ingredient> Ingredients { get; set; } //Un plato puede tener N ingredientes
 
     }

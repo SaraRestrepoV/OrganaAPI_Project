@@ -67,12 +67,12 @@ namespace Organa.Controllers
         }
 
         [HttpPut, ActionName("Edit")]
-        [Route("Edit/{name}")]
-        public async Task<ActionResult> EditDish(string Name, Dish dish)
+        [Route("Edit/{id}")]
+        public async Task<ActionResult> EditDish(Guid? id, Dish dish)
         {
             try
             {
-                if (Name != dish.Name) return NotFound("Dish not found");
+                if (id != dish.Id) return NotFound("Plato no encontrado");
 
                 dish.ModifiedDate = DateTime.Now;
 
@@ -93,12 +93,12 @@ namespace Organa.Controllers
         }
 
         [HttpDelete, ActionName("Delete")]
-        [Route("Delete/{Name}")]
-        public async Task<ActionResult> DeleteDish(string Name)
+        [Route("Delete/{Id}")]
+        public async Task<ActionResult> DeleteDish(Guid? id)
         {
             if (_context.Dishes == null) return Problem("Entity set 'DataBaseContext.Dishes' is null.");
 
-            var dish = await _context.Dishes.FirstOrDefaultAsync(c => c.Name == Name);
+            var dish = await _context.Dishes.FirstOrDefaultAsync(c => c.Id == id);
 
             if (dish == null) return NotFound("Dish not found");
 

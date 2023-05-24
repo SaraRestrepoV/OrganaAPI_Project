@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Organa.DAL;
 
@@ -11,9 +12,11 @@ using Organa.DAL;
 namespace Organa.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230524220010_WithoutRequired")]
+    partial class WithoutRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +61,7 @@ namespace Organa.Migrations
                     b.HasIndex("idChef")
                         .IsUnique();
 
-                    b.ToTable("Chefs", (string)null);
+                    b.ToTable("Chefs");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Customer", b =>
@@ -101,7 +104,7 @@ namespace Organa.Migrations
                     b.HasIndex("customerId")
                         .IsUnique();
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.DeliveryPerson", b =>
@@ -141,7 +144,7 @@ namespace Organa.Migrations
                     b.HasIndex("deliveryPersonId")
                         .IsUnique();
 
-                    b.ToTable("Distributors", (string)null);
+                    b.ToTable("Distributors");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Dish", b =>
@@ -191,7 +194,7 @@ namespace Organa.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Dishes", (string)null);
+                    b.ToTable("Dishes");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Ingredient", b =>
@@ -221,7 +224,7 @@ namespace Organa.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Ingredients", (string)null);
+                    b.ToTable("Ingredients");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Invoice", b =>
@@ -241,7 +244,7 @@ namespace Organa.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Invoices", (string)null);
+                    b.ToTable("Invoices");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Menu", b =>
@@ -271,7 +274,7 @@ namespace Organa.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Menus", (string)null);
+                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Order", b =>
@@ -306,7 +309,7 @@ namespace Organa.Migrations
 
                     b.HasIndex("deliveryPersonId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Pay", b =>
@@ -329,7 +332,7 @@ namespace Organa.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Receipt", b =>
@@ -358,7 +361,7 @@ namespace Organa.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Receipts", (string)null);
+                    b.ToTable("Receipts");
                 });
 
             modelBuilder.Entity("Organa.DAL.Entities.Dish", b =>
