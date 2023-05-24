@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Organa\DAL\Entities\Chef.cs" Link="Models\Chef.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Customer.cs" Link="Models\Customer.cs" />
+    <Compile Include="..\Organa\DAL\Entities\DeliveryPerson.cs" Link="Models\DeliveryPerson.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Dish.cs" Link="Models\Dish.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Entity.cs" Link="Models\Entity.cs" />
+    <Compile Include="..\Organa\DAL\Entities\EntityUsers.cs" Link="Models\EntityUsers.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Ingredient.cs" Link="Models\Ingredient.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Invoice.cs" Link="Models\Invoice.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Menu.cs" Link="Models\Menu.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Order.cs" Link="Models\Order.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Pay.cs" Link="Models\Pay.cs" />
+    <Compile Include="..\Organa\DAL\Entities\Receipt.cs" Link="Models\Receipt.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
