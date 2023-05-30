@@ -12,7 +12,7 @@ using Organa.DAL;
 namespace Organa.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20230523225948_InitialMigration")]
+    [Migration("20230530200713_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -214,8 +214,8 @@ namespace Organa.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

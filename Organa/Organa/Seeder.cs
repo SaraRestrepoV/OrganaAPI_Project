@@ -29,7 +29,7 @@ namespace Organa
                 {
                     CreatedDate = DateTime.Now,
                     Name = "Bandeja paisa",
-                    Category = 1,
+                    Category = 1 /*0= Entrada, 1= Plato fuerte, 2= Postre*/,
                     Image = "https://cdn.colombia.com/gastronomia/2011/08/02/bandeja-paisa-1616.gif",
                     Description = "La bandeja paisa es uno de los platos más representativos de Colombia " +
                     "y la insignia de la gastronomía antioqueña, y es propio de esta región, Antioquia.",
@@ -41,72 +41,322 @@ namespace Organa
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Tallos de cebolla larga"
+                            Name = "1 cucharada y media de aceite"
 
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Tomates maduros"
+                            Name = "2 tallos de cebolla larga finamente picada"
+
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Sobre de caldo con costilla maggie desmenuzado"
+                            Name = "2 tomates maduros sin piel y finamente picados"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Libra de carne molida magra"
+                            Name = "1 sobre de caldo con costilla maggie desmenuzado"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Libra de arroz blanco cocinado"
+                            Name = "3 tazas de agua"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Libra de tocino crocante cortado"
+                            Name = "1/2 libra de fríjoles bola roja remojados desde la noche anterior"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Chorizos tipo coctel"
+                            Name = "1/4 libra de carne molida magra"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Huevos fritos"
+                            Name = "1/2 libra de arroz blanco cocinado"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Aguacate partido en 4 porciones"
+                            Name = "1/4 de libra de tocino crocante cortado en 4 porciones"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Arepas pequeñas redondas"
+                            Name = "4 chorizos tipo coctel previamente cocinados y dorados"
                         },
                         new Ingredient
                         {
                             Id = Guid.NewGuid(),
                             CreatedDate = DateTime.Now,
-                            Name = "Tajadas de plátano maduro fritas "
+                            Name = "4 huevos fritos"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 aguacate partido en 4 porciones "
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "4 arepas pequeñas redondas"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "4 tajadas de plátano maduro fritas"
                         }
 
                     }
-                }) ; 
+                });
+                
+                _context.Dishes.Add(new Dish
+                {
+                    CreatedDate = DateTime.Now,
+                    Name = "Ajiaco Santafereño",
+                    Category = 1 /*0= Entrada, 1= Plato fuerte, 2= Postre*/,
+                    Image = "https://www.recetasnestle.com.co/sites/default/files/srh_recipes/f78cf6630b31638994b09b3b470b085c.jpg",
+                    Description = "El Ajiaco santafereño en una receta tradicional de la zona centro de colombia.",
+                    Value = 20000,
+                    Ingredients = new List<Ingredient>()
+
+                    {
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "300 g de pechuga"
+
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "900 ml de agua"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "300 g de papa criolla pelada y cortada en cubos"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "300 g de papa pastusa pelada y cortada en rodajas"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "300 g de papa sabanera pelada y cortada en rodajas"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 mazorca tierna cortada  en rodajas de 3 cm"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 tallo de cebolla larga"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "5 g de ajo"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 ramillete de guascas"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 ramillete de cilantro"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "250 g de crema de leche"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "100 g de alcaparras"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 aguacate mediano cortado en cubos"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "Sal al gusto"
+                        }
+
+                    }
+                });
+
+                _context.Dishes.Add(new Dish
+                {
+                    CreatedDate = DateTime.Now,
+                    Name = "Postre napoleon",
+                    Category = 2 /*0= Entrada, 1= Plato fuerte, 2= Postre*/,
+                    Image = "https://cdn.colombia.com/gastronomia/2019/05/08/napoleon-1658.gif",
+                    Description = " El postre napoleon es un postre hecho de hojaldre con capas de crema pastelera. " +
+                    "Su forma moderna estuvo influenciada por las mejoras realizadas por Marie-Antoine Carême.",
+                    Value = 15000,
+                    Ingredients = new List<Ingredient>()
+
+                    {
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "400 gramos de crema de leche"
+
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "4 tazas de leche entera"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "400 gramos de leche condensada"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 paquete de galletas Ducales"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "125 gramos de maicena"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 sobre de milo"
+                        }
+
+                    }
+                });
+
+                _context.Dishes.Add(new Dish
+                {
+                    CreatedDate = DateTime.Now,
+                    Name = "Croquetas de cangrejo",
+                    Category = 0 /*0= Entrada, 1= Plato fuerte, 2= Postre*/,
+                    Image = "https://www.laylita.com/recetas/wp-content/uploads/2023/03/Receta-de-las-croquetas-de-cangrejo.jpg",
+                    Description = "Estas deliciosas croquetas se preparan con cangrejo (regular, jaiba, o surimi)," +
+                    " queso crema, ralladura de pan, zanahoria, huevo, cilantro, y más.",
+                    Value = 15000,
+                    Ingredients = new List<Ingredient>()
+
+                    {
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "300 gramos de carne/pulpa de cangrejo/jaiba"
+
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 zanahoria pequeña"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "2 tazas y media de agua"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "3 tazas y media de queso crema"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 taza y media de pan rallado"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "Media taza de harina de trigo"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "2 huevos"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "2 tazas de aceite"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "1 ramita de cilantro"
+                        },
+                        new Ingredient
+                        {
+                            Id = Guid.NewGuid(),
+                            CreatedDate = DateTime.Now,
+                            Name = "Sal y pimienta al gusto"
+                        }
+
+                    }
+                });
+                
             }
         }
     }
