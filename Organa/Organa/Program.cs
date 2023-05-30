@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Organa;
 using Organa.DAL;
 using System.Text.Json.Serialization;
 
@@ -16,7 +17,10 @@ builder.Services.AddDbContext<DataBaseContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+builder.Services.AddTransient<Seeder>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -24,6 +28,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+SeederData();
+void SeederData()
+{
+    IServiceScopeFactory? scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (IServiceScope? scope = scopedFactory.CreateScope())
+    {
+        Seeder? service = scope.ServiceProvider.GetService<Seeder>();
+        service.SeederAsync().Wait();
+    }
+}
+
 
 app.UseHttpsRedirection();
 

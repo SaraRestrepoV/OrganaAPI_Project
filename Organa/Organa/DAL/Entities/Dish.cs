@@ -10,7 +10,7 @@ namespace Organa.DAL.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Name { get; set; }
 
-        [Display(Name = "Categoría")] //Me gustaria cambiar esto por una clase que albergue los 3 tipos de categorias de platos disponibles con su respectiva descripción
+        [Display(Name = "Categoría")]
         public int Category { get; set; }
 
         [Display(Name = "Imagen")]
