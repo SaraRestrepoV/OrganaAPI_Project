@@ -10,77 +10,8 @@
     <a asp-action="Create" class="btn btn-outline-primary">Ordenar</a>
 </p>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Mis Órdenes</h3>
-            </div>
-            <div class="panel-body">
-                <table class="table table-hover table-responsive table-striped" id="OrdersTable">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Id)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.status)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.details)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.value)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Dishes)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CreatedDate)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ModifiedDate)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.status)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.details)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.value)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Dishes)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CreatedDate)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ModifiedDate)
-                                </td>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">Editar</a>
-                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Detalles</a>
-                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">Eliminar</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+<div>
+    <h1>Mis órdenes</h1>
 </div>
 
 @section Scripts {
