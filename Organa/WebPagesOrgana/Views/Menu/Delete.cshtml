@@ -1,4 +1,4 @@
-﻿@model Organa.DAL.Entities.Dish
+﻿@model Organa.DAL.Entities.Menu
 
 @{
     ViewData["Title"] = "Delete";
@@ -6,13 +6,13 @@
 
 <h1>Eliminar</h1>
 
-<h3>Estas seguro que deseas eliminar el plato?</h3>
+<h3>Estas seguro que deseas eliminar este Menu?</h3>
 <div>
-    <h4>Plato: @Model.Name</h4>
+    <h4>Menu: @Model.Name</h4>
     <hr />
     <dl class="row">
         <div class="panel-body">
-            <table class="table table-hover table-responsive table-striped" id="DishesTable">
+            <table class="table table-hover table-responsive table-striped" id="MenuTable">
                 <thead>
                     <tr>
                         <td>
@@ -22,16 +22,7 @@
                             @Html.DisplayFor(model => model.Name)
                         </td>
                         <td>
-                            @Html.DisplayFor(model => model.Category)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => model.Image)
-                        </td>
-                        <td>
                             @Html.DisplayFor(model => model.Description)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(model => model.Value)
                         </td>
                         <td>
                             @Html.DisplayFor(model => model.CreatedDate)
