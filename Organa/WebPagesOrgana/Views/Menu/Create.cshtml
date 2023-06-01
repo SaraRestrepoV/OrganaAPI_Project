@@ -1,4 +1,4 @@
-﻿@model Organa.DAL.Entities.Menu
+﻿@model WebPagesOrgana.Models.MenuViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -23,9 +23,12 @@
             </div>
 
             <div class="form-group mt-3">
-                <label asp-for="Dishes" class="control-label"></label>
-                <input asp-for="Dishes" class="form-control"/>
-                <span asp-validation-for="Dishes" class="text-danger"></span>
+                <label asp-for="SelectedDishId" class="control-label"></label>
+
+                <select asp-for="SelectedDishId" asp-items="@(new SelectList(Model.Dishes, "Id", "Name"))" class="form-control">
+                    <option value="">Seleccione un plato</option>
+                </select>
+                <span asp-validation-for="SelectedDishId" class="text-danger"></span>
             </div>
 
             <div class="form-group">

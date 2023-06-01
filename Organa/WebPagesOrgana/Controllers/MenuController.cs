@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 using System.Security.Policy;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Net.Sockets;
+using WebPagesOrgana.Models;
 
 namespace WebPagesOrgana.Controllers
 {
@@ -33,23 +34,50 @@ namespace WebPagesOrgana.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            return View();
+            var dishesTask = GetDishesAsync();
+            MenuViewModel menuViewModel = new MenuViewModel();
+            menuViewModel.Dishes = new List<DishViewModel>();
+            var dishes = await dishesTask;
+
+            foreach (var dish in dishes)
+            {
+                menuViewModel.Dishes.Add(dish);
+            }
+
+            //ViewBag.Dishes = dishes;
+            return View(menuViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Menu menus)
+        public async Task<IActionResult> Create(MenuViewModel menuViewModel)
         {
             try
             {
+                Menu menu = new()
+                {
+                    Name = menuViewModel.Name,
+                    Description = menuViewModel.Description,
+                    //Dishes = 
+                
+                };
                 var url = "https://localhost:7187/api/Dish/CreateMenu";
-                await _httpClient.CreateClient().PostAsJsonAsync(url, menus);
+                await _httpClient.CreateClient().PostAsJsonAsync(url, menu);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 return View("Error", ex);
             }
+        }
+
+        private async Task<ICollection<DishViewModel>> GetDishesAsync()
+        {
+            var url = "https://localhost:7187/api/Dish/Get";
+            var json = await _httpClient.CreateClient().GetStringAsync(url);
+            ICollection<DishViewModel> dishes = JsonConvert.DeserializeObject<List<DishViewModel>>(json);
+            dishes.Select(d => new { d.Id, d.Name });
+            return dishes;
         }
 
         [HttpGet]

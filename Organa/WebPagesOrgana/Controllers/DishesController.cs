@@ -27,6 +27,7 @@ namespace WebPagesOrgana.Controllers
                 var json = await _httpClient.CreateClient().GetStringAsync(url);
                 List<Dish> Dishes = JsonConvert.DeserializeObject<List<Dish>>(json);
                 return View(Dishes);
+
             } catch (Exception ex)
             {
                 return View("Error", ex);

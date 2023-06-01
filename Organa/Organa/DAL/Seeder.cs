@@ -1,8 +1,7 @@
-﻿using Organa.DAL;
-using Organa.DAL.Entities;
+﻿using Organa.DAL.Entities;
 using System.Diagnostics.Metrics;
 
-namespace Organa
+namespace Organa.DAL
 {
     public class Seeder
     {
@@ -130,7 +129,7 @@ namespace Organa
 
                     }
                 });
-                
+
                 _context.Dishes.Add(new Dish
                 {
                     CreatedDate = DateTime.Now,
@@ -360,7 +359,7 @@ namespace Organa
 
                     }
                 });
-                
+
             }
         }
 
@@ -458,7 +457,7 @@ namespace Organa
 
         private async Task PopulateChefsAsync()
         {
-            if(!_context.Chefs.Any())
+            if (!_context.Chefs.Any())
             {
                 _context.Chefs.Add(new Chef
                 {
