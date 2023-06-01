@@ -16,10 +16,14 @@ namespace Organa
         {
             await _context.Database.EnsureCreatedAsync(); //Esta línea me ayuda a crear mi BD de forma automática
             await PopulateDishesAsync();
-           // await PopulateIngredientsAsync();
+            await PopulateChefsAsync();
+            await PopulateCustomersAsync();
+            await PopulateDistributorsAsync();
+            await PopulateMenusAsync();
 
             await _context.SaveChangesAsync();
         }
+
 
         private async Task PopulateDishesAsync()
         {
@@ -357,6 +361,115 @@ namespace Organa
                     }
                 });
                 
+            }
+        }
+
+        private async Task PopulateMenusAsync()
+        {
+            if (!_context.Menus.Any())
+            {
+                _context.Menus.Add(new Menu
+                {
+                    CreatedDate = DateTime.Now,
+                    Id = Guid.NewGuid(),
+                    Name = "Menú prueba",
+                    Description = "Primer menú creado para el restaurante ORGANA",
+                    Dishes = new List<Dish>()
+                    {
+                        new Dish{
+                                 CreatedDate = DateTime.Now,
+                                Name = "Plato prueba",
+                                Category = 0 /*0= Entrada, 1= Plato fuerte, 2= Postre*/,
+                                Image = "https://www.ORGANA/Platos/prueba.png",
+                                Description = "Un plato creado para el menú de prueba.",
+                                Value = 100000,
+                                Ingredients = new List<Ingredient>()
+                                    {
+                                        new Ingredient
+                                        {
+                                            Id = Guid.NewGuid(),
+                                            CreatedDate = DateTime.Now,
+                                            Name = "Agua de uwu"
+                                        }
+                                    }
+                                }
+                    }
+                });
+            }
+        }
+
+        private async Task PopulateDistributorsAsync()
+        {
+            if (!_context.Distributors.Any())
+            {
+                _context.Distributors.Add(new DeliveryPerson
+                {
+                    CreatedDate = DateTime.Now,
+                    deliveryPersonId = "1003456671",
+                    firstName = "Susana",
+                    lastName = "Horia",
+                    email = "Susanahoria021@gmail.com",
+                    phone = "3035567534"
+
+                });
+
+                _context.Distributors.Add(new DeliveryPerson
+                {
+                    CreatedDate = DateTime.Now,
+                    deliveryPersonId = "1001234567",
+                    firstName = "Antonio",
+                    lastName = "Martinez",
+                    email = "AntonnieMartinez04@gmail.com",
+                    phone = "3267890567"
+
+                });
+            }
+        }
+
+        private async Task PopulateCustomersAsync()
+        {
+            if (!_context.Customers.Any())
+            {
+                _context.Customers.Add(new Customer
+                {
+                    CreatedDate = DateTime.Now,
+                    customerId = "75690876",
+                    firstName = "Cristina",
+                    lastName = "Amalgama",
+                    email = "CrisAmalga02@gmail.com",
+                    phone = "3012485633",
+                    address = "Calle 34 A # 10-25"
+
+                });
+
+                _context.Customers.Add(new Customer
+                {
+                    CreatedDate = DateTime.Now,
+                    customerId = "1000234654",
+                    firstName = "Santiago",
+                    lastName = "Villamizar",
+                    email = "SantVilla98@gmail.com",
+                    phone = "3564568790",
+                    address = "Calle 76 B # 08-10"
+
+                });
+            }
+        }
+
+        private async Task PopulateChefsAsync()
+        {
+            if(!_context.Chefs.Any())
+            {
+                _context.Chefs.Add(new Chef
+                {
+                    CreatedDate = DateTime.Now,
+                    idChef = "1001278905",
+                    firstNameChef = "Paquito",
+                    lastNameChef = "Almarado",
+                    emailChef = "PacoAL007@gmail.com",
+                    phoneChef = "3108890768"
+
+                });
             }
         }
     }
