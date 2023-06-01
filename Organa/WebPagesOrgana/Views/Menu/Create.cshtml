@@ -1,0 +1,17 @@
+﻿@model Organa.DAL.Entities.Menu
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 class="text-success text-center mt-5">@ViewData["Title"]</h1>
+
+
+<div class="row d-flex justify-content-center align-items-center">
+    <h1>Menu</h1>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
