@@ -27,7 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Include="wwwroot\Images\LOGO-ORGANA.png" />
+    <None Include="wwwroot\Images\slide01.jpg" />
+    <None Include="wwwroot\Images\slide02.jpg" />
+    <None Include="wwwroot\Images\slide03.jpg" />
   </ItemGroup>
 
 </Project>
